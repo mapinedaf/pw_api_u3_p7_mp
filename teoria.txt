@@ -1,0 +1,4 @@
+no es bueno trabajar con el modelo en el service porque se genera una fuerte dependencia
+Las apis tiene una estructura o nomenclatura
+http://localhost:8080/matricula/v1.1/personas/capacidad
+protocolo/ip+puerto o dominio /nombre de la api/version/ servicio en plural/capacidad atado a los metodos 
