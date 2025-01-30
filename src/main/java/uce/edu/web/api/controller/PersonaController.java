@@ -8,25 +8,32 @@ import uce.edu.web.api.service.IPersonaService;
 import uce.edu.web.api.service.to.PersonaTo;
 
 @Path("/personas")
-public class PersonaController{
+public class PersonaController {
 
     @Inject
-    IPersonaService service;
+    private IPersonaService personaService;
 
-    @Path("/buscar")
     @GET
-    public Response buscarPorId(){
-        Integer id = 1;
-        return  Response.ok(this.service.buscarPorId(id)).build();
+    @Path("/buscar")
+    public Response buscarPorId() {
+        Integer id =1;
+        return Response.ok(this.personaService.buscarPorId(id)).build();
     }
-    public void gurdar(PersonaTo persona){
-        this.service.guardar(persona);
-    }
-    public void actualizar(PersonaTo persona){
-        this.service.actualizar(persona);
 
+    @Path("/guardar")
+    public void guardar(PersonaTo persona) {
+        this.personaService.guardar(persona);;
     }
-    public void borrar(Integer id){
-        this.service.borrar(id);
+
+    @Path("/actualizar")
+    public void actualizar(PersonaTo persona) {
+       this.personaService.actualizar(persona);;
     }
+
+    @Path("/borrar")
+    public void borrar(Integer id) {
+        this.personaService.borrar(id);;
+    }
+
+
 }
