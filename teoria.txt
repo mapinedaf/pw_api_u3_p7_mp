@@ -2,3 +2,26 @@ no es bueno trabajar con el modelo en el service porque se genera una fuerte dep
 Las apis tiene una estructura o nomenclatura
 http://localhost:8080/matricula/v1.1/personas/capacidad
 protocolo/ip+puerto o dominio /nombre de la api/version/ servicio en plural/capacidad atado a los metodos 
+
+verbos html
+get controller, coneguir recursos
+post insertar un recurso 
+put modificar un recurso/s (Actualizacion total)
+patch modificacion parcial del recurso o recursos 
+delete eliminar recurso o recursos 
+
+el request y el response se componen de 2 partes 
+head
+Body
+
+Cuando necesito enviar datos de un recurso o varios recursos
+estos deben ser enviados en el body. 
+
+cuando quiero especificar que mi request recibe un recurso lo
+pongo como argumento de mi metodo y solo puedo poner un solo
+request body. se lo declara en la api como un argumeto de 
+la capacidad del metodo. 
+
+
+
+
