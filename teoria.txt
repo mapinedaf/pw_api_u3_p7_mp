@@ -22,6 +22,34 @@ pongo como argumento de mi metodo y solo puedo poner un solo
 request body. se lo declara en la api como un argumeto de 
 la capacidad del metodo. 
 
+Modelo de maduez de richardson
+mayor calidad en la programacion de apis
+mide la madurez de un proceso
+tiene 4 niveles llevados por 4 criterios
+0) Una api web trabaja con http/https
 
+1) Los paths deben ser autodescriptivos
+    solo con ver la url y el verbo se puede saber
+    que hace el endpoint.
 
+    No debo poner un nombre a las capacidades
+    
+    /matricula/v1.1/personas/1 (GET) Consultar la persona con el id 1
+    /matricula/v1.1/personas (GET) Consultar todas las personas
+    /matricula/v1.1/personas/1 (DELETE) Borrar una persona con el id 1
+    /matricula/v1.1/personas (DELETE) Borrar todas las personas
+
+    --En PUT y PATCH la informacion de la persona va en el body
+    /matricula/v1.1/personas/1 (PUT) Actualizar una persona con el id 1
+    /matricula/v1.1/personas/1 (PATCH) Actualizar parcialmente una persona con el id 1
+
+    --con POST no se envia por url el id ya que lo mas correcto es que 
+    --el id sea una secuencia
+
+    /matricula/v1.1/personas (POST) --En el body se defne si es uno o varios
+    -- con otros valores se puede usar path variable 
+
+3) 
+
+4) 
 
