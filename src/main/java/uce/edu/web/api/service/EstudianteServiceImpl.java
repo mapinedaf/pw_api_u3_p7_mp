@@ -1,11 +1,14 @@
 package uce.edu.web.api.service;
 
+import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import uce.edu.web.api.repository.IEstudianteRepository;
 import uce.edu.web.api.repository.modelo.Estudiante;
+import uce.edu.web.api.service.to.EstudianteTo;
 import uce.edu.web.api.service.to.EstudianteTo;
 
 
@@ -43,5 +46,26 @@ public class EstudianteServiceImpl implements IEstudianteService {
        this.repo.eliminar(id);
     }
 
-    
+        @Override
+    public List<EstudianteTo> buscarTodos() {
+        return this.repo.buscarTodos()
+                .stream()
+                .map(mapTo)
+                .collect(Collectors.toList());
+    }
+    @Override
+    public List<EstudianteTo> buscarPorNombre(String nombre) {
+        return this.repo.buscarPorNombre(nombre)
+                .stream()
+                .map(mapTo)
+                .collect(Collectors.toList());
+    }
+    @Override
+    public List<EstudianteTo> buscarNombreApellido(String nombre,String apellido) {
+        return this.repo.buscarNombreApellido(nombre,apellido)
+                .stream()
+                .map(mapTo)
+                .collect(Collectors.toList());
+    }
+
 }
