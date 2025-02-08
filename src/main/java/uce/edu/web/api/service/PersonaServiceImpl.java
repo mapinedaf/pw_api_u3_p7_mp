@@ -14,7 +14,13 @@ import uce.edu.web.api.service.to.PersonaTo;
 public class PersonaServiceImpl implements IPersonaService {
 
     private Function<Persona,PersonaTo> mapTo = p ->{
-        return new PersonaTo(p.getId(),p.getNombre(),p.getApellido(),p.getFechaNacimiento());
+
+        if(p!=null){
+        return new PersonaTo(p.getId(),p.getNombre(),p.getApellido(),p.getFechaNacimiento());}
+        System.out.println(
+          "persona null"  
+        );
+        return new PersonaTo();
     };
 
     private Function<PersonaTo,Persona> mapPersona = pTo ->{

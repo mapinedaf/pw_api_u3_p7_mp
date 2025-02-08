@@ -48,7 +48,48 @@ tiene 4 niveles llevados por 4 criterios
 
     /matricula/v1.1/personas (POST) --En el body se defne si es uno o varios
     -- con otros valores se puede usar path variable 
+2) Se deben manejar los codigos de respuesta adecuados
+    Los codigos de respuesta son basados en estandares definidos por la w3cy estos codigos
+    se categorizan en 5
+    Estos codigos no son exclusivos para aplicaciones web.
 
+    1)Respuestas con caracter informativo. 
+        100 - 199 o 1XX 
+        Tambien podemos usar codigos no estandar para personalizar la respuesta. 
+        
+    2) Respuestas satisfactorias 200 -299
+    3) Redicrecciones 300-399
+        indica un mensaje de Redicreccion 
+        no son los mas usados. 
+    400) Errores en los clientes 400-499
+        en las aplicaciones web siempre hay un cliente
+        en una pagina web es el navegador. 
+
+    500) Errores de servidor 500-599
+        Se debe revisar el error en el log del servidor. 
+
+    CODIGOS IMPORTANTES 
+    100 Continue -> aplicaciones que demoran mucho la respuesta, indica que todo esta funcionando bien
+    200 OK -> respuestas genericas satisfactorias, cualquier solicitud de informacion
+    201 Created -> Respuesta exitosa, se crea un nuevo recurso como resultado.
+    204 no content -> la peticion se completo con exito pero su respuesta no tiene contenido, no hay body
+    206 partial content -> la peticion servira pacialmente el contenido solicitado
+                           Es util en apis que emoran y un resultado parcial es aceptable
+    301 moven permantenly -> la url o uri del recurso ha sido cambiada, probablemente haya una nueva uri en la respuesta
+    302 Found -> el recurso de la uri  cambiado temporalmente 
+    400 Bad request -> el servidor no pudo procesar la solicitud por una sinstaxis invalida en el body
+    401 Unauthorized -> una buena practia es que la aplicaicon pida una autenticacion
+                        401 indica que la api necesita autenticar y el cliente no se ha autenticado
+    403 Forbiden -> el cliente no tiene los permisis necesario ára cierto contenido
+    404 Not Found -> El servidor no pudo encontrar el contenido solicitado. 
+    405 Method not allowed -> existe la url pero el verbo no existe en la implementacion
+    408 request timeout -> cuando existe una peticion y se demora en responder y el cliente decide terminar la conexion
+    413 payload too large -> el body es demasiado largo
+    414 uri too long -> la url es demasiado larga 
+    415 unsuported media type -> el tipo de dato enviado no es valido
+    429 too many requests -> el usuario ha enviado muchas solicitures en un periodo de tiempo.
+    500 internal server error -> el servidor encontro un error que no puede manejar 
+    508 el servidor detecto un ciclo infinito
 3) 
 
 4) 
