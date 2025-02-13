@@ -90,7 +90,22 @@ tiene 4 niveles llevados por 4 criterios
     429 too many requests -> el usuario ha enviado muchas solicitures en un periodo de tiempo.
     500 internal server error -> el servidor encontro un error que no puede manejar 
     508 el servidor detecto un ciclo infinito
+
+    usar los codigos estandar primero cuando corresponde 
+
+    Mediatypé se refiere al tipo de contenido que tiene el body, tando en request como en response
+    no usar los valores por defecto, especificar claramente que formato recibe el body y que formato
+    responde el body
+
 3) 
 
 4) 
+
+
+Caracteristicas de una aplicacion web moderna 
+    frameworks javascript 
+    apis web
+
+    diseño y adaptabilidad en diferentes dispositivos
+    responsive web design
 

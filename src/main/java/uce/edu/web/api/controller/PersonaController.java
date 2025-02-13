@@ -10,7 +10,9 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import uce.edu.web.api.service.IPersonaService;
 import uce.edu.web.api.service.to.PersonaTo;
@@ -23,8 +25,11 @@ public class PersonaController {
 
     @GET
     @Path("/{id}")
+    @Produces(MediaType.APPLICATION_XML)
     public Response buscarPorId(@PathParam("id") Integer id) {
-        return Response.ok(this.personaService.buscarPorId(id)).build();
+
+        return Response.status(Response.Status.OK).entity(personaService.buscarPorId(id)).header("valor1",500).header("Mensaje", "Persona creada pero en proceso de validación").build();
+      //return Response.ok(this.personaService.buscarPorId(id)).build();
     }
 
     @POST
