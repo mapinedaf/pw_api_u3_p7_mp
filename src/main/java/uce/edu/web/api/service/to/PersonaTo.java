@@ -8,7 +8,6 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import uce.edu.web.api.service.LocalDateTimeAdapter;
 
-@XmlRootElement
 public class PersonaTo implements Serializable{
     public PersonaTo(Integer id, String nombre, String apellido, LocalDateTime fechaNacimiento) {
         this.id = id;
@@ -18,7 +17,7 @@ public class PersonaTo implements Serializable{
     }
     public PersonaTo() {
     }
-    @XmlElement
+     
     public Integer getId() {
         return id;
     }
@@ -31,15 +30,14 @@ public class PersonaTo implements Serializable{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    @XmlElement
+     
     public String getApellido() {
         return apellido;
     }
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    @XmlElement
-    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
+    
     public LocalDateTime getFechaNacimiento() {
         return fechaNacimiento;
     }
